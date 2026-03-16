@@ -3,7 +3,9 @@ import anthropic
 
 # 设置页面
 st.title("🤖 智能助手")
-
+if st.button("🗑️ 清空对话"):
+    st.session_state.messages = []
+    st.rerun()
 # 初始化对话历史
 if "messages" not in st.session_state:
     st.session_state.messages = []
