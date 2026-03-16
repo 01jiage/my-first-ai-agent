@@ -36,5 +36,8 @@ if user_input:
             )
         answer = response.content[0].text
         st.write(answer)
+        input_tokens = response.usage.input_tokens
+        output_tokens = response.usage.output_tokens
+        st.caption(f"📊 本次消耗：输入 {input_tokens} tokens，输出 {output_tokens} tokens")
 
     st.session_state.messages.append({"role": "assistant", "content": answer})
