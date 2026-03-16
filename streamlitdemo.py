@@ -22,7 +22,7 @@ if user_input:
     with st.chat_message("user"):
         st.write(user_input)
 
-    client = anthropic.Anthropic(api_key="sk-qslMXny0o4vnbTAquW3PuHooyDsFtnRza8Z3ME3RmweaVA3E")  # 换成你的key
+    client = anthropic.Anthropic(api_key=st.secrets["ANTHROPIC_API_KEY"])  # 换成你的key
     
     with st.chat_message("assistant"):
         with st.spinner("思考中..."):
